@@ -1,8 +1,9 @@
 import './App.css';
 import Home from "./pages/home"
-import About from "./pages/about"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/login';
+import Login from './pages/auth/login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About />} />
         </Routes>
     </div>
   );
