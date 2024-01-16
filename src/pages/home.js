@@ -3,7 +3,7 @@ import { Tabs, Tab } from "react-bootstrap";
 import Applications from "./home/application"; // Başvurularım sayfasını içeren bileşen
 import Trainings from "./home/trainings"; // Eğitimlerim sayfasını içeren bileşen
 import Announcements from "./home/announcements"; // Duyurular ve haberler sayfasını içeren bileşen
-// import Surveys from "./Surveys"; // Anketlerim sayfasını içeren bileşen
+import Surveys from "./home/surveys"; // Anketlerim sayfasını içeren bileşen
 import Layout from "../layouts/HeaderLogicLayout";
 
 export default function Home() {
@@ -21,18 +21,17 @@ export default function Home() {
           <Tab eventKey="Trainings" title="Eğitimlerim">
             <Trainings />
           </Tab>
-          <Tab eventKey="Announcements" title="Başvurularım">
-          <Announcements />
-        </Tab>
-        <Tab eventKey="announcements" title="Duyurular ve Haberler">
+          <Tab eventKey="Applications" title="Başvurularım">
           <Applications />
         </Tab>
-          {/* 
+        <Tab eventKey="announcements" title="Duyurular ve Haberler">
+          <Announcements />
+        </Tab>
 
 
         <Tab eventKey="surveys" title="Anketlerim">
           <Surveys />
-        </Tab> */}
+        </Tab> 
         </Tabs>
       </div>
     </Layout>

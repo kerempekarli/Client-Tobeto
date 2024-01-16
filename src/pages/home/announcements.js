@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import Layout from "../../layouts/HeaderLogicLayout";
 
 const Announcements = () => {
   const announcementsData = [
@@ -20,7 +19,7 @@ const Announcements = () => {
     // Diğer duyurular ve haberler...
   ];
 
-  return (
+  return ( announcementsData.count > 0 ? <div>"sadgsdag</div> :
       <div className="container mt-4">
         <div className="row">
           {announcementsData.map((announcement) => (

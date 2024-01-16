@@ -2,11 +2,11 @@
 
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
-
+import announcementReducer from './announcementReducer'; // Eklendi
 
 const rootReducer = combineReducers({
-    auth: authReducer, // Yeni eklenen reducer
-
+  auth: authReducer,
+  announcement: announcementReducer, // Eklendi
   // diğer reducer'ları buraya ekleyebilirsiniz
 });
 
