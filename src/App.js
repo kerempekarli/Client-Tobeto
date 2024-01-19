@@ -1,26 +1,27 @@
-import './App.css';
-import Home from "./pages/home"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/auth/login';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AdminDashboard from './pages/AdminDashboard';
-import AnnouncementsComponent from './pages/Announcements';
-import PlatformCatalog from './pages/platformCatalog';
-import Catalog from './pages/catalog';
-
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/auth/login";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./pages/home/Home";
+import DuyuruHaberler from "./components/home/duyuruHaberler";
+import Egitimlerim from "./components/home/egitimlerim";
+import Basvurularım from "./components/home/basvurularım";
+import Anketlerim from "./components/home/anketlerim";
 
 function App() {
   return (
-    <div className='app'>
-        {/* Navbar veya diğer ortak bileşenler buraya gelebilir */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          <Route path="/announcements" element={<AnnouncementsComponent />} />
-          <Route path="/platform-catalog" element={<PlatformCatalog />} />
-          <Route path="/catalog" element={<Catalog />} />
-        </Routes>
+    <div className="app">
+      {/* Navbar veya diğer ortak bileşenler buraya gelebilir */}
+      <Routes>
+        <Route path="/home" element={<Home />}>
+          {" "}
+          <Route path="basvurularim" element={<Basvurularım />} />
+          <Route path="egitimlerim" element={<Egitimlerim />} />
+          <Route path="duyuru-haberler" element={<DuyuruHaberler />} />
+          <Route path="anketlerim" element={<Anketlerim />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
