@@ -1,3 +1,6 @@
+// AnnouncementAction.js
+
+
 import axios from 'axios';
 import {
   fetchAnnouncementsRequest,
@@ -13,7 +16,7 @@ export const getAnnouncements = () => async (dispatch) => {
   try {
     dispatch(fetchAnnouncementsRequest());
     const response = await axios.get('http://localhost:6280/api/Announcements/GetList?PageIndex=0&PageSize=100');
-    console.log("REPONSE  ", response.data)
+    console.log("REPONSE  ", response.data.items)
     dispatch(fetchAnnouncementsSuccess(response.data));
   } catch (error) {
     dispatch(fetchAnnouncementsFailure(error.message));
