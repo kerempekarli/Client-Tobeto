@@ -1,6 +1,7 @@
 // src/store/actions/authActions.js
 
 import { login, logout } from '../reducers/authReducer';
+<<<<<<< HEAD
 import axiosInstance from '../../services/axiosHelper';
 import { useNavigate } from "react-router-dom";
 
@@ -39,10 +40,23 @@ export const loginUser = (credentials) => async (dispatch) => {
     console.error('Login failed:', error);
     // Hata durumunda kullanıcıya bilgi verebilir veya başka bir işlem gerçekleştirebilirsiniz.
     // Örneğin: dispatch(showErrorMessage('Login failed. Please try again.'));
+=======
+
+export const loginUser = (credentials) => async (dispatch) => {
+  try {
+    // Asenkron işlemler burada gerçekleştirilebilir (örneğin, bir API çağrısı)
+    // Örnek olarak, giriş başarılı olduğunu varsayalım:
+    const user = { email: credentials.email, };
+    dispatch(login(user));
+  } catch (error) {
+    // Hata durumunu yönetmek için gerekli işlemler burada yapılabilir
+    console.error('Login failed:', error);
+>>>>>>> main
   }
 };
 
 export const logoutUser = () => (dispatch) => {
+<<<<<<< HEAD
   try {
     // Logout işlemi burada gerçekleştirilebilir
     dispatch(logout());
@@ -52,4 +66,8 @@ export const logoutUser = () => (dispatch) => {
     // Hata durumunda kullanıcıya bilgi verebilir veya başka bir işlem gerçekleştirebilirsiniz.
     // Örneğin: dispatch(showErrorMessage('Logout failed. Please try again.'));
   }
+=======
+  // Logout işlemi burada gerçekleştirilebilir
+  dispatch(logout());
+>>>>>>> main
 };
