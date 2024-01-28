@@ -6,9 +6,8 @@ const Header = () => {
             <Container fluid>
             <Navbar.Brand href="#">
                     <img
-                        src="../assets/tobeto-logo.png"
+                        src="https://tobeto.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftobeto-logo.409772fc.png&w=256&q=75"
                         alt="Logo"
-                        style={{ width: '170px', height: '35px', objectFit: 'cover', background: 'transparent' }}
                     />
                 </Navbar.Brand>
 
@@ -29,29 +28,29 @@ const Header = () => {
                 </button>
 
                 <Nav className="d-none d-xxl-flex navbar-nav">
-                    <Nav.Link href="#" className="nav-link nav-active">
+                    <Nav.Link href="platform" className="nav-link nav-active">
                         Ana Sayfa
                     </Nav.Link>
-                    <Nav.Link href="#" className="nav-link c-gray-3">
+                    <Nav.Link href="profilim" className="nav-link c-gray-3">
                         Profilim
                     </Nav.Link>
-                    <Nav.Link href="#" className="nav-link c-gray-3">
+                    <Nav.Link href="değerlendirmeler" className="nav-link c-gray-3">
                         Değerlendirmeler
                     </Nav.Link>
-                    <Nav.Link href="#" className="nav-link c-gray-3">
+                    <Nav.Link href="platform-catalog" className="nav-link c-gray-3">
                         Katalog
                     </Nav.Link>
-                    <Nav.Link href="#" className="nav-link c-gray-3">
+                    <Nav.Link href="takvim" className="nav-link c-gray-3">
                         Takvim
                     </Nav.Link>
-                    <Nav.Link href="#" className="nav-link c-gray-3">
+                    <Nav.Link href="istanbul-kodluyor" className="nav-link c-gray-3">
                         İstanbul Kodluyor
                     </Nav.Link>
                 </Nav>
 
                 <div className="d-none d-xxl-block">
                     <div className="d-flex justify-space-between align-items-center">
-                        <div className="mx-3 align-items-center d-flex align-items-center" style={{ gap: '1em' }}>
+                        <div className="mx-3 align-items-center d-flex align-items-center" >
                             <span className="tbt-gradient"></span>
                         </div>
                         <div className="btn-group header-avatar">
@@ -64,9 +63,9 @@ const Header = () => {
                                 <div className="me-2">
                                     <img
                                         className="cv-pp-img rounded-circle"
-                                        src="https://tobeto-private.s3.cloud.ngn.com.tr/user-profile-photo/11666.png?AWSAccessKeyId=ALMS%3Aalms-storage%40advancity.com.tr&amp;Expires=1705409215&amp;Signature=DUG0pgpV3xxuiD8MkCW0M4qgdlE%3D"
+                                        src="https://tobeto-private.s3.cloud.ngn.com.tr/user-profile-photo/11666.png?AWSAccessKeyId=ALMS%3Aalms-storage%40advancity.com.tr&Expires=1706560417&Signature=dGV3XJoSP8vf7%2Bw7Z%2FHAqg4RuwM%3D"
                                         alt=""
-                                        style={{ width: '36px', height: '36px', objectFit: 'cover' }}
+                                        height={40}
                                     />
                                 </div>
                                 <div className="me-3">
@@ -97,10 +96,10 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <hr className="dropdown-divider" style={{ backgroundColor: 'rgb(204, 204, 204)', height: '1px' }} />
+                                    <hr className="dropdown-divider" />
                                 </li>
                                 <li>
-                                    <hr className="dropdown-divider" style={{ backgroundColor: 'rgba(100, 100, 100, 0.5)', height: '1px' }} />
+                                    <hr className="dropdown-divider" />
                                 </li>
                                 <li>
                                     <a className="dropdown-item profil-dropdown" href="#">

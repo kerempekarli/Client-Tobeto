@@ -1,3 +1,9 @@
+
+import React, { useState,  } from "react";
+import { useDispatch,  } from "react-redux";
+import { loginUser,  } from "../../store/actions/authActions";
+
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, logoutUser } from "../../store/actions/authActions";
@@ -9,19 +15,23 @@ import Layout from "../../layouts/HeaderLogicLayout";
 
 export default function Login() {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   const handleLogin = () => {
     // Formdan gelen bilgilerle loginUser action'ını tetikle
     dispatch(loginUser({ email, password }));
   };
 
+
   const handleLogout = () => {
     dispatch(logoutUser());
   };
+
 
   return (
     <Layout showHeader={false}>
