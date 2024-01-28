@@ -7,6 +7,7 @@ import DuyuruHaberler from "./components/home/duyuruHaberler";
 import Egitimlerim from "./components/home/egitimlerim";
 import Basvurularim from "./components/home/basvurularım";
 import Anketlerim from "./components/home/anketlerim";
+import Register from "./pages/auth/register";
 
 function PrivateRoute({ element }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -42,6 +43,7 @@ function App() {
           <Route path="anketlerim" element={<PrivateRoute element={<Anketlerim />} />} />
         </Route>
         <Route path="/login" element={<PrivateRoute element={<Login />} />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

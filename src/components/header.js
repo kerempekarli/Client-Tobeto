@@ -63,8 +63,9 @@ const Header = () => {
                                 <div className="me-2">
                                     <img
                                         className="cv-pp-img rounded-circle"
-                                        src="https://tobeto-private.s3.cloud.ngn.com.tr/user-profile-photo/11666.png?AWSAccessKeyId=ALMS%3Aalms-storage%40advancity.com.tr&amp;Expires=1705409215&amp;Signature=DUG0pgpV3xxuiD8MkCW0M4qgdlE%3D"
+                                        src="https://tobeto-private.s3.cloud.ngn.com.tr/user-profile-photo/11666.png?AWSAccessKeyId=ALMS%3Aalms-storage%40advancity.com.tr&Expires=1706560417&Signature=dGV3XJoSP8vf7%2Bw7Z%2FHAqg4RuwM%3D"
                                         alt=""
+                                        height={40}
                                     />
                                 </div>
                                 <div className="me-3">
