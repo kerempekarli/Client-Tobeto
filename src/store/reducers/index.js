@@ -3,7 +3,6 @@
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import announcementReducer from './announcementReducer'; // Eklendi
-<<<<<<< HEAD
 import categoryReducer from './categoryReducer';
 import courseReducer from './courseReducer';
 import { persistReducer } from 'redux-persist';
@@ -26,13 +25,3 @@ const rootReducer = combineReducers({
 });
 
 export default persistReducer(persistConfig, rootReducer);
-=======
-
-const rootReducer = combineReducers({
-  auth: authReducer,
-  announcement: announcementReducer, // Eklendi
-  // diğer reducer'ları buraya ekleyebilirsiniz
-});
-
-export default rootReducer;
->>>>>>> main

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Login from "./pages/auth/login";
 import Home from "./pages/home/Home";
@@ -8,26 +8,29 @@ import Egitimlerim from "./components/home/egitimlerim";
 import Basvurularim from "./components/home/basvurularım";
 import Anketlerim from "./components/home/anketlerim";
 import Register from "./pages/auth/register";
+import Surveys from "./pages/home/surveys"
+import SurveyForm from "./pages/survey-form"
 
 function PrivateRoute({ element }) {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    // If the user is authenticated and tries to access the login page, redirect to home.
+    // Kullanıcı kimlik doğrulamasını geçmişse ve login sayfasına yönlendiriliyorsa, anasayfaya yönlendir.
     if (isAuthenticated && location.pathname === "/login") {
       console.log(`Redirect to home. Path: ${location.pathname}`);
-      window.location.href = "/home";
+      navigate("/home", { replace: true });
     }
 
-    // If the user is not authenticated and not on the login page, redirect to login.
+    // Kullanıcı kimlik doğrulamasını geçmiş değilse ve login sayfasında değilse, giriş sayfasına yönlendir.
     if (!isAuthenticated && location.pathname !== "/login") {
       console.log(`Redirect to login. Path: ${location.pathname}`);
-      window.location.href = "/login";
+      navigate("/login", { replace: true });
     }
-  }, [isAuthenticated, location.pathname]);
+  }, [isAuthenticated, location.pathname, navigate]);
 
-  // Render the provided element if the user is authenticated, otherwise navigate to login.
+  // Kullanıcı kimlik doğrulamasını geçmişse sağlanan bileşeni render et, aksi takdirde giriş sayfasına yönlendir.
   return isAuthenticated ? element : <Navigate to="/login" replace />;
 }
 
@@ -42,8 +45,11 @@ function App() {
           <Route path="duyuru-haberler" element={<PrivateRoute element={<DuyuruHaberler />} />} />
           <Route path="anketlerim" element={<PrivateRoute element={<Anketlerim />} />} />
         </Route>
-        <Route path="/login" element={<PrivateRoute element={<Login />} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/login2" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/surveys" element={<Surveys />} />
+        <Route path="/survey-form/:id" element={<SurveyForm />} />
       </Routes>
     </div>
   );

@@ -52,77 +52,76 @@ const Register = () => {
 
   return (
     <div className="container mt-5">
-      <h2>User Registration</h2>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>First Name:</Form.Label>
-          <Form.Control
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Last Name:</Form.Label>
-          <Form.Control
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Email:</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Password:</Form.Label>
-          <Form.Control
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>National Identity:</Form.Label>
-          <Form.Control
-            type="text"
-            name="nationalIdentity"
-            value={formData.nationalIdentity}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Birth Date:</Form.Label>
-          <Form.Control
-            type="date"
-            name="birthDate"
-            value={formData.birthDate}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Phone Number:</Form.Label>
-          <Form.Control
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        {/* Diğer alanları ekleyin */}
-        <Button variant="primary" type="submit">
-          Register
-        </Button>
-      </Form>
-    </div>
+    <h2 className="text-center mb-4">User Registration</h2>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3">
+        <Form.Label>First Name:</Form.Label>
+        <Form.Control
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Last Name:</Form.Label>
+        <Form.Control
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>National Identity:</Form.Label>
+        <Form.Control
+          type="text"
+          name="nationalIdentity"
+          value={formData.nationalIdentity}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Birth Date:</Form.Label>
+        <Form.Control
+          type="date"
+          name="birthDate"
+          value={formData.birthDate}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Phone Number:</Form.Label>
+        <Form.Control
+          type="tel"
+          name="phoneNumber"
+          value={formData.phoneNumber}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Button variant="primary" type="submit" className="w-100">
+        Register
+      </Button>
+    </Form>
+  </div>
   );
 };
 

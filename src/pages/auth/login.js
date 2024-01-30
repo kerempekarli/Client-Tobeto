@@ -1,12 +1,7 @@
 
-import React, { useState,  } from "react";
-import { useDispatch,  } from "react-redux";
-import { loginUser,  } from "../../store/actions/authActions";
-
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser, logoutUser } from "../../store/actions/authActions";
+import { logoutAsync, loginAsync } from "../../store/actions/authActions";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -24,12 +19,12 @@ export default function Login() {
 
   const handleLogin = () => {
     // Formdan gelen bilgilerle loginUser action'ını tetikle
-    dispatch(loginUser({ email, password }));
+    dispatch(loginAsync({ email, password }));
   };
 
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    dispatch(logoutAsync());
   };
 
 
