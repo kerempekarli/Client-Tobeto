@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 
 
 //announcementReducer.js
-=======
->>>>>>> main
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

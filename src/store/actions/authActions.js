@@ -1,73 +1,34 @@
 // src/store/actions/authActions.js
 
 import { login, logout } from '../reducers/authReducer';
-<<<<<<< HEAD
 import axiosInstance from '../../services/axiosHelper';
-import { useNavigate } from "react-router-dom";
 
-
-export const loginUser = (credentials) => async (dispatch) => {
-
-  
+// Async giriş işlemi
+export const loginAsync = (loginData) => async (dispatch) => {
   try {
-    // Simüle edilmiş bir API çağrısı. Gerçek projede bu kısım bir API'ye gerçek bir istek olmalı.
-    const response = await axiosInstance.post('/Auth/login', credentials);
+    // Giriş servisi çağrılır
+    const response = await axiosInstance.post('/Auth/login', loginData);
 
-    if (!response.status === 200) {
-      console.log("ERROR " , response);
-      throw new Error('Login failed');
+    if (response.status === 200) {
+      // Giriş başarılı olduğunda state güncellenir
+      dispatch(login(response.data));
+    } else {
+      // Hata durumunda istediğiniz işlemleri yapabilirsiniz
+      console.error("Login failed:", response);
+      // Giriş başarısız olduğunda kullanıcıya bilgi verebilir veya başka bir işlem gerçekleştirebilirsiniz.
+      // Örneğin: dispatch(showErrorMessage('Login failed. Please try again.'));
     }
-
-
-
-    const data = response.data;
-
-    // Asenkron işlemler burada gerçekleştirilebilir (örneğin, bir API çağrısı)
-    // Örnek olarak, giriş başarılı olduğunu varsayalım:
-    const user = {
-      id: data.user.id,
-      firstName: data.user.firstName,
-      lastName: data.user.lastName,
-      email: data.user.email,
-      birthDate: data.user.birthDate,
-      phoneNumber: data.user.phoneNumber,
-      imagePath: data.user.imagePath,
-    };
-
-    dispatch(login({ user, token: data.token }));
   } catch (error) {
     // Hata durumunu yönetmek için gerekli işlemler burada yapılabilir
-    console.error('Login failed:', error);
+    console.error("An error occurred while logging in:", error);
     // Hata durumunda kullanıcıya bilgi verebilir veya başka bir işlem gerçekleştirebilirsiniz.
     // Örneğin: dispatch(showErrorMessage('Login failed. Please try again.'));
-=======
-
-export const loginUser = (credentials) => async (dispatch) => {
-  try {
-    // Asenkron işlemler burada gerçekleştirilebilir (örneğin, bir API çağrısı)
-    // Örnek olarak, giriş başarılı olduğunu varsayalım:
-    const user = { email: credentials.email, };
-    dispatch(login(user));
-  } catch (error) {
-    // Hata durumunu yönetmek için gerekli işlemler burada yapılabilir
-    console.error('Login failed:', error);
->>>>>>> main
   }
 };
 
-export const logoutUser = () => (dispatch) => {
-<<<<<<< HEAD
-  try {
-    // Logout işlemi burada gerçekleştirilebilir
-    dispatch(logout());
-  } catch (error) {
-    // Hata durumunu yönetmek için gerekli işlemler burada yapılabilir
-    console.error('Logout failed:', error);
-    // Hata durumunda kullanıcıya bilgi verebilir veya başka bir işlem gerçekleştirebilirsiniz.
-    // Örneğin: dispatch(showErrorMessage('Logout failed. Please try again.'));
-  }
-=======
-  // Logout işlemi burada gerçekleştirilebilir
-  dispatch(logout());
->>>>>>> main
+// Async çıkış işlemi
+export const logoutAsync = () => async (dispatch) => {
+   
+
+      dispatch(logout());
 };
